@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Firas Almashama — Resume</title>
+    <meta name="description" content="Resume of Firas Almashama, software engineering student." />
+    <style>
+      :root {
+        --accent: #4f46e5;
+        --accent-2: #059669;
+        --text: #111827;
+        --muted: #4b5563;
+        --border: #e5e7eb;
+        --bg: #f9fafb;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        max-width: 820px;
+        margin: 2rem auto;
+        padding: 2.5rem 3rem;
+        background: white;
+        color: var(--text);
+        line-height: 1.55;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      }
+
+      header {
+        border-bottom: 3px solid var(--accent);
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.2rem;
+        letter-spacing: -0.02em;
+      }
+
+      .tagline {
+        margin: 0.3rem 0 0.6rem;
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      .contact-line {
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .contact-line a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      h2 {
+        margin: 1.6rem 0 0.6rem;
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.3rem;
+      }
+
+      h3 {
+        margin: 0.8rem 0 0.2rem;
+        font-size: 1.02rem;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+
+      .job-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin-bottom: 0.3rem;
+      }
+
+      ul { margin: 0.3rem 0 0.5rem 1.2rem; padding: 0; }
+      li { margin-bottom: 0.2rem; }
+
+      .skills-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2rem 1.5rem;
+        list-style: none;
+        margin-left: 0;
+      }
+
+      .skills-list li::before {
+        content: "▸ ";
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      p { margin: 0.4rem 0; }
+
+      .download-bar {
+        background: #fef3c7;
+        border: 1px solid #fcd34d;
+        padding: 0.6rem 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        color: #78350f;
+      }
+
+      .download-bar button {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 0.4rem 0.9rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 700;
+        margin-left: 0.5rem;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          padding: 1.5rem 2rem;
+          box-shadow: none;
+          max-width: 100%;
+        }
+        .download-bar { display: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="download-bar">
+      💡 Tip: Press <strong>Ctrl/Cmd + P</strong> and choose "Save as PDF" to download this resume.
+      <button onclick="window.print()" type="button">Print / Save as PDF</button>
+    </div>
+
+    <header>
+      <h1>Firas Almashama</h1>
+      <p class="tagline">Software Engineering Student • Front-end Developer in Training</p>
+      <p class="contact-line">
+        📍 Saudi Arabia &nbsp;•&nbsp;
+        ✉️ <a href="mailto:s202263160@kfupm.edu.sa">s202263160@kfupm.edu.sa</a> &nbsp;•&nbsp;
+        💼 <a href="https://www.linkedin.com/in/firasalmashama">linkedin.com/in/firasalmashama</a> &nbsp;•&nbsp;
+        💻 <a href="https://github.com/FirasKF">github.com/FirasKF</a>
+      </p>
+    </header>
+
+    <section>
+      <h2>Profile</h2>
+      <p>
+        Software engineering student passionate about building modern, accessible, and interactive
+        web applications. Comfortable working with HTML, CSS, JavaScript, and AI-assisted development
+        workflows. Looking for internships and entry-level front-end opportunities.
+      </p>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <h3>King Fahd University of Petroleum &amp; Minerals (KFUPM)</h3>
+      <div class="job-meta">
+        <span>B.Sc. in Software Engineering (in progress)</span>
+        <span>2022 — Present</span>
+      </div>
+      <ul>
+        <li>Coursework: Web Development, Data Structures, Software Engineering Principles</li>
+        <li>Projects across the curriculum focused on full-stack fundamentals and AI tooling</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+
+      <h3>Personal Portfolio Website (Assignments 1 → 4)</h3>
+      <div class="job-meta">
+        <span>HTML, CSS, JavaScript, GitHub API</span>
+        <span>2025 — 2026</span>
+      </div>
+      <ul>
+        <li>Built four iterations of a personal portfolio, each adding a new layer of complexity.</li>
+        <li>Implemented light/dark theme + accent-mood presets via CSS custom properties + localStorage.</li>
+        <li>Integrated GitHub REST API to live-fetch and render public repositories with loading/error states.</li>
+        <li>Built a keyword-based "AI assistant" widget that answers questions about the site without external services.</li>
+        <li>Added scroll-triggered animations using IntersectionObserver, with reduced-motion fallback.</li>
+      </ul>
+
+      <h3>Task Manager (Vanilla JS)</h3>
+      <div class="job-meta">
+        <span>JavaScript, localStorage</span>
+        <span>2026</span>
+      </div>
+      <ul>
+        <li>Small CRUD app practising state management and DOM manipulation without a framework.</li>
+      </ul>
+
+      <h3>Responsive Landing Page</h3>
+      <div class="job-meta">
+        <span>HTML, CSS, Responsive Design</span>
+        <span>2026</span>
+      </div>
+      <ul>
+        <li>Modern landing page emphasising layout, typography, and mobile-first responsiveness.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5 (semantic structure)</li>
+        <li>CSS3 (Flexbox, Grid, custom properties)</li>
+        <li>JavaScript (ES6+, async/await, fetch)</li>
+        <li>Responsive &amp; mobile-first design</li>
+        <li>DOM manipulation, events, localStorage</li>
+        <li>Fetch API &amp; working with JSON</li>
+        <li>Git &amp; GitHub workflows</li>
+        <li>AI-assisted development (prompting, code review)</li>
+        <li>Performance optimisation (lazy loading, debounce)</li>
+        <li>Form validation</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Soft Skills</h2>
+      <p>
+        Self-directed learner • Collaborative communicator • Detail-oriented • Comfortable with ambiguity •
+        Curious about new tools and willing to read documentation thoroughly.
+      </p>
+    </section>
+
+    <section>
+      <h2>Languages</h2>
+      <p>Arabic (native) • English (professional working proficiency).</p>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <p>Available on request.</p>
+    </section>
+  </body>
+</html>

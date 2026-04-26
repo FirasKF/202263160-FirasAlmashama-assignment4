@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Firas Almashama | Personal Portfolio</title>
+    <meta
+      name="description"
+      content="Personal portfolio of Firas Almashama — software engineering student. Projects, skills, blog, and contact information."
+    />
+    <meta name="author" content="Firas Almashama" />
+    <meta name="theme-color" content="#7c5cff" />
+
+    <!-- Open Graph (for nicer link previews when shared) -->
+    <meta property="og:title" content="Firas Almashama | Personal Portfolio" />
+    <meta property="og:description" content="Software engineering student building interactive web applications." />
+    <meta property="og:type" content="website" />
+
+    <link rel="preload" href="css/styles.css" as="style" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Favicon: inline SVG initials so we don't need a separate file -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237c5cff'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='system-ui,Arial,sans-serif' font-size='34' font-weight='800' fill='white'%3EFA%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ===== TOP SCROLL PROGRESS BAR (A4 polish) ===== -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- ===== HEADER / NAV ===== -->
+    <header class="site-header" role="banner">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="#home" aria-label="Go to home">Firas Almashama</a>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+          <span class="nav__toggle-bar" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav__links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle theme">
+            <span class="theme-toggle__icon" aria-hidden="true">🌓</span>
+            <span class="theme-toggle__text">Theme</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- A3: Visitor greeting bar — shows saved name or input -->
+    <div class="visitor-bar" id="visitorBar" aria-label="Visitor greeting">
+      <div class="container visitor-bar__inner">
+        <div id="visitorPrompt">
+          <label for="visitorNameInput">👋 What's your name?</label>
+          <input
+            type="text"
+            id="visitorNameInput"
+            placeholder="Enter your name..."
+            aria-label="Enter your name"
+          />
+          <button class="btn btn--small" id="visitorNameSave" type="button">Save</button>
+        </div>
+        <div id="visitorGreeting" class="visitor-bar__greeting" hidden>
+          <span id="visitorGreetingText"></span>
+          <button class="btn btn--small btn--ghost" id="visitorNameClear" type="button">Not you?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- A3: Site visit timer -->
+    <div class="visit-timer" id="visitTimer" aria-label="Time spent on site">
+      ⏱️ Time on site: <span id="visitTimerDisplay">0m 0s</span>
+    </div>
+
+    <!-- A4: Back-to-top button (polish) -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" hidden>
+      ↑
+    </button>
+
+    <main id="main">
+      <!-- ===== HERO / HOME ===== -->
+      <section class="section hero" id="home" aria-label="Home">
+        <div class="container hero__grid">
+          <div class="hero__content fade-in">
+            <p class="pill" id="greeting" aria-live="polite">Hello!</p>
+            <h1 class="hero__title">I'm <span class="accent">Firas Almashama</span>.</h1>
+            <p class="hero__subtitle">
+              Software engineering student focused on building interactive web applications and improving user experience.
+            </p>
+
+            <!-- A4: Animated typing tagline -->
+            <p class="hero__typed" aria-live="polite">
+              <span class="hero__typed-prefix">I build </span>
+              <span class="hero__typed-text" id="typedText"></span>
+              <span class="hero__typed-cursor" aria-hidden="true">|</span>
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#projects">View Projects</a>
+              <a class="btn btn--ghost" href="#contact">Contact Me</a>
+              <!-- A4: Resume download -->
+              <a class="btn btn--ghost" href="assets/resume.html" id="resumeBtn" target="_blank" rel="noopener">
+                📄 Resume
+              </a>
+            </div>
+
+            <ul class="hero__meta" aria-label="Quick facts">
+              <li><strong>Location:</strong> Saudi Arabia</li>
+              <li><strong>Focus:</strong> Web Development + AI Tools</li>
+              <li><strong>Status:</strong> Open to internships</li>
+            </ul>
+          </div>
+
+          <div class="hero__media fade-in" aria-label="Profile photo">
+            <img
+              src="assets/images/me.jpg"
+              width="420"
+              height="420"
+              loading="lazy"
+              alt="Profile photo of Firas Almashama"
+              class="avatar"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section class="section" id="about" aria-label="About Me">
+        <div class="container">
+          <div class="section__head fade-in">
+            <h2 class="section__title">About Me</h2>
+            <button class="btn btn--small btn--ghost toggle-section-btn" type="button" data-target="aboutContent" aria-expanded="true">
+              Hide Section
+            </button>
+          </div>
+          <div id="aboutContent">
+            <p class="section__lead fade-in">
+              I am a web development student passionate about creating modern, accessible websites.
+              I enjoy learning new technologies and turning ideas into interactive experiences.
+              My goal is to build a strong foundation in front-end development and grow into a full-stack developer.
+            </p>
+
+            <!-- A4: Animated stats counters -->
+            <div class="stats fade-in" aria-label="Quick stats">
+              <div class="stat">
+                <span class="stat__num" data-count="3" data-suffix="+">0</span>
+                <span class="stat__label">Years learning code</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" data-count="12">0</span>
+                <span class="stat__label">Projects built</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" data-count="7">0</span>
+                <span class="stat__label">Tech in stack</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num" data-count="100" data-suffix="%">0</span>
+                <span class="stat__label">Powered by ☕</span>
+              </div>
+            </div>
+
+            <div class="cards cards--3">
+              <article class="card fade-in">
+                <h3 class="card__title">Strengths</h3>
+                <p class="card__text">
+                  Clean code structure, attention to detail, and strong problem-solving skills.
+                </p>
+              </article>
+
+              <article class="card fade-in">
+                <h3 class="card__title">Skills</h3>
+                <ul class="list">
+                  <li>HTML (semantic, accessible)</li>
+                  <li>CSS (Flexbox/Grid, responsive)</li>
+                  <li>JavaScript (DOM, events, localStorage)</li>
+                </ul>
+              </article>
+
+              <article class="card fade-in">
+                <h3 class="card__title">Hobbies</h3>
+                <p class="card__text">
+                  Gaming, reading tech blogs, and building personal projects.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== A4: SKILLS WITH ANIMATED PROGRESS BARS ===== -->
+      <section class="section" id="skills" aria-label="Skills">
+        <div class="container">
+          <h2 class="section__title fade-in">Tech Stack &amp; Skills</h2>
+          <p class="section__lead fade-in">
+            Tools and technologies I use, with my honest self-assessment of comfort level.
+          </p>
+
+          <div class="skills-grid" id="skillsGrid">
+            <!-- Skill bars injected by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== A4: TIMELINE / JOURNEY ===== -->
+      <section class="section" id="timeline" aria-label="Journey timeline">
+        <div class="container">
+          <h2 class="section__title fade-in">My Journey</h2>
+          <p class="section__lead fade-in">
+            A short timeline of how I got here — and where I'm going next.
+          </p>
+
+          <ol class="timeline" id="timelineList">
+            <!-- Timeline items injected by JavaScript -->
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== PROJECTS (A2 + A3: filter, search, AND sort) ===== -->
+      <section class="section" id="projects" aria-label="Projects">
+        <div class="container">
+          <div class="section__head fade-in">
+            <h2 class="section__title">Projects</h2>
+            <p class="section__lead">
+              Browse my projects below. Use the filter buttons, search, or sort to find specific work.
+            </p>
+          </div>
+
+          <!-- A2: Project Filter Buttons -->
+          <div class="project-filters fade-in" aria-label="Filter projects by tag">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="html">HTML</button>
+            <button class="filter-btn" data-filter="css">CSS</button>
+            <button class="filter-btn" data-filter="javascript">JavaScript</button>
+            <button class="filter-btn" data-filter="responsive">Responsive</button>
+          </div>
+
+          <!-- A3: Project Sort Dropdown -->
+          <div class="project-controls fade-in">
+            <div class="project-search">
+              <input
+                type="text"
+                id="projectSearch"
+                placeholder="Search projects by name or description..."
+                aria-label="Search projects"
+              />
+            </div>
+            <div class="project-sort">
+              <label for="projectSort">Sort by:</label>
+              <select id="projectSort" aria-label="Sort projects">
+                <option value="default">Default</option>
+                <option value="name-az">Name A–Z</option>
+                <option value="name-za">Name Z–A</option>
+                <option value="date-newest">Newest First</option>
+                <option value="date-oldest">Oldest First</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="empty-state" id="noProjectsMsg" aria-live="polite"></p>
+
+          <div class="projects" id="projectsContainer">
+            <!-- Cards injected dynamically by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== A3: GITHUB REPOS (API Integration) ===== -->
+      <section class="section" id="github-repos" aria-label="GitHub Repositories">
+        <div class="container">
+          <h2 class="section__title fade-in">My GitHub Repositories</h2>
+          <p class="section__lead fade-in">
+            Live data fetched from the GitHub API — showing my latest public repositories.
+          </p>
+
+          <p class="github-repos__loading" id="ghLoading" aria-live="polite">Loading repositories…</p>
+          <p class="github-repos__error" id="ghError" aria-live="polite"></p>
+
+          <div class="cards cards--3" id="ghReposContainer">
+            <!-- GitHub repo cards injected by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== A4: BLOG / ARTICLES ===== -->
+      <section class="section" id="blog" aria-label="Blog">
+        <div class="container">
+          <div class="section__head fade-in">
+            <h2 class="section__title">Blog &amp; Notes</h2>
+            <p class="section__lead">
+              Short write-ups about things I've learned while building this portfolio.
+            </p>
+          </div>
+
+          <div class="blog-grid" id="blogGrid">
+            <!-- Blog cards injected by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== A4: MOOD-BASED THEME PLAYGROUND (mini interactive demo) ===== -->
+      <section class="section" id="playground" aria-label="Mood Playground">
+        <div class="container fade-in">
+          <h2 class="section__title">Mood Playground 🎨</h2>
+          <p class="section__lead">
+            A tiny interactive demo — pick a vibe and watch the entire site recolor in real time.
+            Your choice is saved for next visit.
+          </p>
+
+          <div class="mood-row" role="group" aria-label="Choose a mood preset">
+            <button class="mood-btn" data-mood="default" type="button">
+              <span class="mood-swatch" style="background:linear-gradient(135deg,#7c5cff,#31d0aa)"></span>
+              Default
+            </button>
+            <button class="mood-btn" data-mood="sunset" type="button">
+              <span class="mood-swatch" style="background:linear-gradient(135deg,#ff7e5f,#feb47b)"></span>
+              Sunset
+            </button>
+            <button class="mood-btn" data-mood="ocean" type="button">
+              <span class="mood-swatch" style="background:linear-gradient(135deg,#0ea5e9,#22d3ee)"></span>
+              Ocean
+            </button>
+            <button class="mood-btn" data-mood="forest" type="button">
+              <span class="mood-swatch" style="background:linear-gradient(135deg,#16a34a,#a3e635)"></span>
+              Forest
+            </button>
+            <button class="mood-btn" data-mood="rose" type="button">
+              <span class="mood-swatch" style="background:linear-gradient(135deg,#e11d48,#f472b6)"></span>
+              Rose
+            </button>
+            <button class="mood-btn" data-mood="mono" type="button">
+              <span class="mood-swatch" style="background:linear-gradient(135deg,#9ca3af,#1f2937)"></span>
+              Mono
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FUN FACT (A2: API Fetch + Loading/Error states) ===== -->
+      <section class="section" id="fun-fact" aria-label="Fun Fact">
+        <div class="container fun-fact-wrapper fade-in">
+          <h2 class="section__title">Random Fun Fact</h2>
+          <p class="section__lead">Click the button to discover something interesting!</p>
+
+          <div class="fun-fact-card">
+            <p class="fun-fact__text" id="funFactText">
+              Click the button below to load a fun fact.
+            </p>
+            <p class="fun-fact__loading" id="funFactLoading" aria-live="polite">Loading…</p>
+            <p class="fun-fact__error" id="funFactError" aria-live="polite"></p>
+            <button class="btn btn--primary" id="funFactBtn" type="button">
+              Get Fun Fact
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section class="section" id="contact" aria-label="Contact">
+        <div class="container">
+          <h2 class="section__title fade-in">Contact</h2>
+          <p class="section__lead fade-in">
+            Have a question or want to connect? Fill out the form below and I'll get back to you.
+          </p>
+
+          <div class="contact">
+            <form class="form fade-in" id="contactForm" novalidate>
+              <div class="field">
+                <label for="contactName">Name</label>
+                <input id="contactName" name="contactName" type="text" autocomplete="name" required />
+                <small class="error" id="nameError"></small>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                />
+                <small class="error" id="emailError"></small>
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  minlength="10"
+                ></textarea>
+                <small class="error" id="messageError"></small>
+              </div>
+
+              <button class="btn btn--primary" type="submit">Send Message</button>
+              <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+
+            <aside class="contact__aside fade-in" aria-label="Contact info">
+              <div class="card">
+                <h3 class="card__title">Quick Contact</h3>
+                <p class="card__text">
+                  Email: <a class="link" href="mailto:s202263160@kfupm.edu.sa">s202263160@kfupm.edu.sa</a>
+                </p>
+                <p class="card__text">
+                  LinkedIn: <a class="link" href="https://www.linkedin.com/in/firasalmashama" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+                </p>
+                <p class="card__text">
+                  GitHub: <a class="link" href="https://github.com/FirasKF" target="_blank" rel="noreferrer">GitHub FirasKF</a>
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== A4: AI CHATBOT WIDGET (floating, bottom-right above visit timer) ===== -->
+    <div class="chatbot" id="chatbot" aria-live="polite">
+      <button
+        class="chatbot__toggle"
+        id="chatbotToggle"
+        type="button"
+        aria-label="Open chat assistant"
+        aria-expanded="false"
+        aria-controls="chatbotPanel"
+      >
+        💬
+      </button>
+
+      <section
+        class="chatbot__panel"
+        id="chatbotPanel"
+        role="dialog"
+        aria-label="Ask about Firas's portfolio"
+        hidden
+      >
+        <header class="chatbot__header">
+          <div>
+            <strong>Portfolio Assistant</strong>
+            <span class="chatbot__status">● online</span>
+          </div>
+          <button class="chatbot__close" id="chatbotClose" type="button" aria-label="Close chat">×</button>
+        </header>
+
+        <div class="chatbot__messages" id="chatbotMessages" aria-live="polite">
+          <!-- messages injected by JS -->
+        </div>
+
+        <div class="chatbot__suggestions" id="chatbotSuggestions" aria-label="Suggested questions">
+          <!-- chip suggestions injected by JS -->
+        </div>
+
+        <form class="chatbot__form" id="chatbotForm">
+          <input
+            type="text"
+            id="chatbotInput"
+            placeholder="Ask about Firas's projects, skills..."
+            aria-label="Type your question"
+            autocomplete="off"
+          />
+          <button class="btn btn--primary btn--small" type="submit">Send</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer">
+        <p>&copy; <span id="year"></span> Firas Almashama. All rights reserved.</p>
+        <p class="footer__sub">Built with HTML, CSS, JavaScript &mdash; no frameworks.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
