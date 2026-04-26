@@ -10,8 +10,7 @@ This is the final iteration of my personal portfolio website. It builds directly
 
 ## 🌐 Live Demo
 
-> _Add your deployment link here once it's live (GitHub Pages / Netlify / Vercel)._  
-> Suggested URL pattern: `https://firaskf.github.io/202263160-FirasAlmashama-assignment4/`
+> https://github.com/FirasKF/202263160-FirasAlmashama-assignment4 `
 
 ---
 
