@@ -150,7 +150,7 @@ A visitor's guide to every feature on the site — what each button does, keyboa
 
 ## 🎤 Presentation
 
-Materials for the 5–8 minute video presentation are in the `presentation/` folder:
+Materials for the 5–7 minute video presentation are in the `presentation/` folder:
 
 - `slides.md` — slide-by-slide outline (covers Introduction → Demo → Deep Dive → Conclusion).
 
