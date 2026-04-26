@@ -10,7 +10,8 @@ This is the final iteration of my personal portfolio website. It builds directly
 
 ## 🌐 Live Demo
 
-> https://github.com/FirasKF/202263160-FirasAlmashama-assignment4 `
+> https://github.com/FirasKF/202263160-FirasAlmashama-assignment4
+> http://127.0.0.1:5500/index.html#home
 
 ---
 
@@ -99,8 +100,9 @@ All A3 features (theme toggle, visitor name, visit timer, GitHub API, fun-fact A
 │   ├── technical-documentation.md
 │   └── user-manual.md
 └── presentation/
-    ├── slides.md          ← outline of the slide deck
-    └── presentation-script.md ← word-for-word talking script
+    ├── slides.md ← outline of the slide deck
+    ├── SWE363 Video Demo Final.mp4        
+    └── slides.pdf
 ```
 
 ---
